@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Layout, Breadcrumb, Card } from 'antd';
+import { Layout, Breadcrumb, Card, Menu, Icon } from 'antd';
 import map from 'lodash/map';
+import filter from 'lodash/filter';
 import Datas from './Datas/Datas.json';
 import FooterEmail from './Card/Card'
-import SubMenu from './Elements/SubMenu'
 
 class Index extends Component {
   render() {
     const { Header, Content, Footer, Sider } = Layout;
+    const { SubMenu } = Menu;
+
     return (
       <Layout>
         <Header className="header">
@@ -23,12 +25,22 @@ class Index extends Component {
           </Breadcrumb>
           <Layout style={{ padding: '24px 0', background: '#fff' }}>
             <Sider width={200} style={{ background: '#fff' }}>
-              {map(Datas, (persona) => (
-                <SubMenu
-                  key={persona.head}
-                  persona={persona}
-                />
-              ))}
+              <Menu
+                mode="inline"
+                style={{ height: 100 }}
+              >
+                {map(Datas, (persona) => (
+                  <SubMenu key={persona.head} title={<span><Icon type="user" />{persona.head}</span>}>
+                    {filter(Datas, (e) => {
+                      return e.head === persona.head;
+                    }).map((e) => (
+                      <Menu.Item>
+                        {e.name}
+                      </Menu.Item>
+                    ))}
+                  </SubMenu>
+                ))}
+              </Menu>
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: 280 }}>
               <Card bodyStyle={{ padding: '10px' }}>
@@ -75,5 +87,4 @@ class Index extends Component {
     );
   }
 }
-
 export default Index;
