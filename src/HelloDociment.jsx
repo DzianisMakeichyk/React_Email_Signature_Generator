@@ -4,7 +4,7 @@ import { Layout, Breadcrumb, Card, Menu, Icon } from 'antd';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
 import Datas from './Datas/Datas.json';
-import FooterEmail from './Card/Card'
+import EmailCard from './Card/Card'
 
 class Index extends Component {
   render() {
@@ -71,7 +71,7 @@ class Index extends Component {
                   {/* End Icon Green */}
                 </div>
                 <div className="custom-card">
-                  <FooterEmail />
+                  <EmailCard />
                 </div>
               </Card>
             </Content>
