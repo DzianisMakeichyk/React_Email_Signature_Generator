@@ -2,11 +2,29 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Layout, Breadcrumb, Card, Menu, Icon } from 'antd';
 import map from 'lodash/map';
-import filter from 'lodash/filter';
+import find from 'lodash/find';
+import merge from 'lodash/merge';
+import reduce from 'lodash/reduce';
 import Datas from './Datas/Datas.json';
 import EmailCard from './Card/Card'
 
 class Index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentInformation: null,
+    }
+  }
+  handelSelect = (data) => {
+    const personas = reduce(Datas, (c, e) => c.concat(e.personas), []);
+
+    const persona = find(personas, (e) => e.name === data.key);
+
+    this.setState({
+      currentInformation: persona,
+    });
+  }
+
   render() {
     const { Header, Content, Footer, Sider } = Layout;
     const { SubMenu } = Menu;
@@ -28,13 +46,14 @@ class Index extends Component {
               <Menu
                 mode="inline"
                 style={{ height: 100 }}
+                onSelect={this.handelSelect}
               >
-                {map(Datas, (persona) => (
-                  <SubMenu key={persona.head} title={<span><Icon type="user" />{persona.head}</span>}>
-                    {filter(Datas, (e) => {
-                      return e.head === persona.head;
-                    }).map((e) => (
-                      <Menu.Item>
+                {map(Datas, (cos) => (
+                  <SubMenu key={cos.name} title={<span><Icon type="user" />{cos.name}</span>}>
+                    {map(cos.personas, (e) => (
+                      <Menu.Item
+                        key={e.name}
+                      >
                         {e.name}
                       </Menu.Item>
                     ))}
@@ -71,7 +90,9 @@ class Index extends Component {
                   {/* End Icon Green */}
                 </div>
                 <div className="custom-card">
-                  <EmailCard />
+                  <EmailCard
+                    persona={this.state.currentInformation}
+                  />
                 </div>
               </Card>
             </Content>

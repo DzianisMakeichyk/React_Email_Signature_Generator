@@ -1,18 +1,28 @@
 [
   {
-    "head" : "Marketing",
-    "name" : "Derek Moss"
+    "name": "Marketing",
+    "personas": [
+      {
+        "name": "Derek Moss",
+        "card": "click"
+      },
+      {
+        "name": "Melinda Davis",
+        "card": "clack"
+      },
+      {
+        "name": "Winston Lloyd",
+        "card": "bang"
+      }
+    ]
   },
   {
-    "head" : "Marketing",
-    "name" : "Melinda Davis"
-  },
-  {
-    "head" : "Marketing",
-    "name" : "Winston Lloyd"
-  },
-  {
-    "head" : "IT",
-    "name" : "Kim Young"
+    "name": "IT",
+    "personas": [
+      {
+        "name": "Kim Young",
+        "card": "wow"
+      }
+    ]
   }
 ]
