@@ -7,14 +7,34 @@
 }
 
 .ant-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
   max-width: 400px;
-  margin: 50px auto 0;
   border-radius: 6px;
+  transform: translate(-50%,-50%);
 
   .ant-card-head {
     text-align: center;
   }
+}
+
+.ant-layout {
+  min-height: 400px;
+}
+
+.ant-layout-content {
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.header-name {
+  width: 100%;
+  max-width: 924px;
+  margin: 0 auto;
 }
 
 .custom-dots {

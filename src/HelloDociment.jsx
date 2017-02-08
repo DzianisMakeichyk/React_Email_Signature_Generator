@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import { Layout, Breadcrumb, Card, Menu, Icon } from 'antd';
 import map from 'lodash/map';
 import find from 'lodash/find';
-import merge from 'lodash/merge';
 import reduce from 'lodash/reduce';
 import Datas from './Datas/Datas.json';
 import EmailCard from './Card/Card'
@@ -23,7 +22,7 @@ class Index extends Component {
     this.setState({
       currentInformation: persona,
     });
-  }
+  };
 
   render() {
     const { Header, Content, Footer, Sider } = Layout;

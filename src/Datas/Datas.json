@@ -4,15 +4,24 @@
     "personas": [
       {
         "name": "Derek Moss",
-        "card": "click"
+        "position": "CEO",
+        "email_short": "derek",
+        "phone": "123456789",
+        "img": "https://goo.gl/gxVGxx"
       },
       {
         "name": "Melinda Davis",
-        "card": "clack"
+        "position": "Co-CEO",
+        "email_short": "melinda",
+        "phone": "123456789",
+        "img": "https://goo.gl/gxVGxx"
       },
       {
         "name": "Winston Lloyd",
-        "card": "bang"
+        "position": "Marketing",
+        "email_short": "winston",
+        "phone": "123456789",
+        "img": "https://goo.gl/gxVGxx"
       }
     ]
   },
@@ -21,7 +30,17 @@
     "personas": [
       {
         "name": "Kim Young",
-        "card": "wow"
+        "position": "Back End Developer",
+        "email_short": "kim",
+        "phone": "123456789",
+        "img": "https://goo.gl/gxVGxx"
+      },
+      {
+        "name": "Dzianis Makeichyk",
+        "position": "Front End Developer",
+        "email_short": "dzianis",
+        "phone": "123456789",
+        "img": "https://goo.gl/gxVGxx"
       }
     ]
   }
